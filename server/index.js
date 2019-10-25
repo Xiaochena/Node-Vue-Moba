@@ -1,13 +1,14 @@
 const express = require('express')
 
-const cors = require('cors')
 // 使用cors解决跨域
+const cors = require('cors')
 
 const app = express()
 app.use(express.json())
-app.use(cors())
 // 使用cors解决跨域
-
+app.use(cors())
+// 静态文件托管
+app.use('/uploads',express.static(__dirname + '/uploads'))
 const router = require('./routes/admin')
 const mongoosedb = require('./plugins/db')
 router(app)
