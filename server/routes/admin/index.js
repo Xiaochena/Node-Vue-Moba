@@ -23,7 +23,7 @@ module.exports = app => {
   })
   router.get('/',async(req,res) => {
     const quertOptions = {}
-    if(req.Model.modelName = 'Category'){
+    if(req.Model.modelName === 'Category'){
       quertOptions.populate = 'parent'
     }
     const items = await req.Model.find().setOptions(quertOptions).limit(10)
@@ -41,6 +41,7 @@ module.exports = app => {
     req.Model = require(`../../models/${modelName}`)
     next()
   },router)
+
 
   // 文件上传
   // 使用插件multer： npm install --save multer
