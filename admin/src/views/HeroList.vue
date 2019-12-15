@@ -3,7 +3,7 @@
     <h1>英雄列表</h1>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"></el-table-column>
-      <el-table-column prop="name" label="物品名称"></el-table-column>
+      <el-table-column prop="name" label="头像名称"></el-table-column>
       <el-table-column prop="icon" label="头像">
         <template slot-scope="scope">
           <img :src="scope.row.avatar" style="height:3rem">
